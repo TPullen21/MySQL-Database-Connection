@@ -20,7 +20,7 @@
 - (void)downloadItems
 {
     // Download the json file
-    NSURL *jsonFileUrl = [NSURL URLWithString:@"http://gtvinyl.com/service.php"];
+    NSURL *jsonFileUrl = [NSURL URLWithString:@"http://itsuite.it.brighton.ac.uk/torp10/MySQLDemo/service.php"];
     
     // Create the request
     NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:jsonFileUrl];

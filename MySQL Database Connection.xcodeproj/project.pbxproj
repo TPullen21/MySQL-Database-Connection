@@ -15,6 +15,8 @@
 		DD16B1001B68034D00D24DC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD16B0FE1B68034D00D24DC5 /* LaunchScreen.storyboard */; };
 		DD16B1091B6804F800D24DC5 /* HomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DD16B1081B6804F800D24DC5 /* HomeModel.m */; };
 		DD16B10C1B68050700D24DC5 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = DD16B10B1B68050700D24DC5 /* Location.m */; };
+		DDC1B5021B695323004B9A29 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC1B5011B695323004B9A29 /* DetailViewController.m */; };
+		DDC1B5041B69539F004B9A29 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDC1B5031B69539F004B9A29 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,9 @@
 		DD16B1081B6804F800D24DC5 /* HomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeModel.m; sourceTree = "<group>"; };
 		DD16B10A1B68050700D24DC5 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
 		DD16B10B1B68050700D24DC5 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		DDC1B5001B695323004B9A29 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		DDC1B5011B695323004B9A29 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		DDC1B5031B69539F004B9A29 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDC1B5041B69539F004B9A29 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +54,7 @@
 		DD16B0E41B68034D00D24DC5 = {
 			isa = PBXGroup;
 			children = (
+				DDC1B5031B69539F004B9A29 /* MapKit.framework */,
 				DD16B0EF1B68034D00D24DC5 /* MySQL Database Connection */,
 				DD16B0EE1B68034D00D24DC5 /* Products */,
 			);
@@ -69,6 +76,8 @@
 				DD16B0F61B68034D00D24DC5 /* ViewController.h */,
 				DD16B0F71B68034D00D24DC5 /* ViewController.m */,
 				DD16B0F91B68034D00D24DC5 /* Main.storyboard */,
+				DDC1B5001B695323004B9A29 /* DetailViewController.h */,
+				DDC1B5011B695323004B9A29 /* DetailViewController.m */,
 				DD16B1071B6804F800D24DC5 /* HomeModel.h */,
 				DD16B1081B6804F800D24DC5 /* HomeModel.m */,
 				DD16B10A1B68050700D24DC5 /* Location.h */,
@@ -120,6 +129,7 @@
 				TargetAttributes = {
 					DD16B0EC1B68034D00D24DC5 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = MLEWQ3WMQX;
 					};
 				};
 			};
@@ -164,6 +174,7 @@
 				DD16B0F81B68034D00D24DC5 /* ViewController.m in Sources */,
 				DD16B0F51B68034D00D24DC5 /* AppDelegate.m in Sources */,
 				DD16B0F21B68034D00D24DC5 /* main.m in Sources */,
+				DDC1B5021B695323004B9A29 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,11 +284,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "MySQL Database Connection/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "self.edu.tompullen.MySQL-Database-Connection";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -285,11 +299,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "MySQL Database Connection/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "self.edu.tompullen.MySQL-Database-Connection";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -312,6 +329,7 @@
 				DD16B1061B68034D00D24DC5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

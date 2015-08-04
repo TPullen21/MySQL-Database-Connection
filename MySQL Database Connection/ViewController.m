@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "Location.h"
 #import "DetailViewController.h"
+#import "AddLocationViewController.h"
 
 @interface ViewController ()
 {
@@ -94,12 +95,17 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get reference to the destination view controller
-    DetailViewController *detailVC = segue.destinationViewController;
-    
-    // Set the property to the selected location so when the view for
-    // detail view controller loads, it can access that property to get the feeditem obj
-    detailVC.selectedLocation = _selectedLocation;
+    if ([segue.destinationViewController isKindOfClass:[DetailViewController class]]) {
+        // Get reference to the destination view controller
+        DetailViewController *detailVC = segue.destinationViewController;
+        
+        // Set the property to the selected location so when the view for
+        // detail view controller loads, it can access that property to get the feeditem obj
+        detailVC.selectedLocation = _selectedLocation;
+    }
 }
 
+- (IBAction)addBarButtonItemPressed:(UIBarButtonItem *)sender {
+    NSLog(@"Add button pressed!!");
+}
 @end

@@ -13,6 +13,7 @@
 @interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, HomeModelProtocol>
 
 @property (strong, nonatomic) IBOutlet UITableView *listTableView;
+- (IBAction)addBarButtonItemPressed:(UIBarButtonItem *)sender;
 
 @end
 

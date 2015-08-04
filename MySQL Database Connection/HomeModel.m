@@ -29,6 +29,21 @@
     [NSURLConnection connectionWithRequest:urlRequest delegate:self];
 }
 
+- (void)uploadlocation {
+    NSMutableURLRequest *request =
+    [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://itsuite.it.brighton.ac.uk/torp10/MySQLDemo/post.php"]];
+    [request setHTTPMethod:@"POST"];
+    NSDictionary *dictionary = @{ @"Name" : @"Qwerty", @"Address" : @"Asdfgh", @"Latitude" : @"37.78", @"Longitude" : @"-122.40" } ;
+    NSError *error = nil;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dictionary options:0 error:&error];
+    if (jsonData) {
+        [request setHTTPBody:jsonData];
+        (void)[[NSURLConnection alloc] initWithRequest:request delegate:self];
+    } else {
+        NSLog(@"Unable to serialize the data %@: %@", dictionary, error);
+    }
+}
+
 #pragma mark NSURLConnectionDataProtocol Methods
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response

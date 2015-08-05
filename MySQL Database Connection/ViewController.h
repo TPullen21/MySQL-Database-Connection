@@ -15,5 +15,7 @@
 @property (strong, nonatomic) IBOutlet UITableView *listTableView;
 - (IBAction)addBarButtonItemPressed:(UIBarButtonItem *)sender;
 
+- (void)downloadDataandReloadTable;
+
 @end
 

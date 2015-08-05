@@ -7,6 +7,7 @@
 //
 
 #import "AddLocationViewController.h"
+#import "ViewController.h"
 #import "HomeModel.h"
 
 @interface AddLocationViewController ()
@@ -18,6 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [self.nameTextField becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -46,8 +49,15 @@
     
 //    HomeModel *homeModel = [[HomeModel alloc] init];
 //    [homeModel uploadlocation];
+
+    if ([self.presentingViewController isKindOfClass:[ViewController class]]) {
+        NSLog(@"ViewController Class");
+    }
+    else if ([self.presentingViewController isKindOfClass:[AddLocationViewController class]]) {
+        NSLog(@"ViewController Class");
+    }
     
-    
+    [self dismissViewControllerAnimated:YES completion:Nil];
 }
 
 - (void)addLocation:(NSString *)name withAddress:(NSString *)address latitude:(NSString *)latitude longitude:(NSString *)longitude  {
@@ -64,7 +74,7 @@
         
         [request setHTTPMethod:@"POST"];
         
-        NSURLConnection *postConnection = [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:YES];
+        self.postConnection = [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:YES];
         
     }
     

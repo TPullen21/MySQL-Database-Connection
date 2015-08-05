@@ -108,4 +108,10 @@
 - (IBAction)addBarButtonItemPressed:(UIBarButtonItem *)sender {
     NSLog(@"Add button pressed!!");
 }
+
+- (void)downloadDataandReloadTable {
+    [_homeModel downloadItems];
+    [self.listTableView reloadData];
+    
+}
 @end

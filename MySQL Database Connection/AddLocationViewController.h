@@ -14,7 +14,9 @@
 #define kLatitude @"Latitude"
 #define kLongitude @"Longitude"
 
-@interface AddLocationViewController : ViewController
+@interface AddLocationViewController : UIViewController
+
+@property (strong, nonatomic) NSURLConnection *postConnection;
 
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *latitudeTextField;

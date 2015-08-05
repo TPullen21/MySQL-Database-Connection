@@ -8,12 +8,18 @@
 
 #import "ViewController.h"
 
+#define kPostURL @"http://itsuite.it.brighton.ac.uk/torp10/MySQLDemo/post.php"
+#define kName @"Name"
+#define kAddress @"Address"
+#define kLatitude @"Latitude"
+#define kLongitude @"Longitude"
+
 @interface AddLocationViewController : ViewController
 
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
-@property (weak, nonatomic) IBOutlet UITextField *locationTextField;
 @property (weak, nonatomic) IBOutlet UITextField *latitudeTextField;
 @property (weak, nonatomic) IBOutlet UITextField *longitudeTextField;
+@property (strong, nonatomic) IBOutlet UITextField *addressTextField;
 
 - (IBAction)cancelBarButtonItemPressed:(UIBarButtonItem *)sender;
 - (IBAction)saveBarButtonItemPressed:(UIBarButtonItem *)sender;

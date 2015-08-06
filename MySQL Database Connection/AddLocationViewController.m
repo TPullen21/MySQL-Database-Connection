@@ -45,7 +45,9 @@
 - (IBAction)saveBarButtonItemPressed:(UIBarButtonItem *)sender {
     NSLog(@"Save button pressed!!");
     
-    [self addLocation:self.nameTextField.text withAddress:self.addressTextField.text latitude:self.latitudeTextField.text longitude:self.longitudeTextField.text];
+    [HomeModel uploadLocationUsingJSON];
+    
+//    [self addLocation:self.nameTextField.text withAddress:self.addressTextField.text latitude:self.latitudeTextField.text longitude:self.longitudeTextField.text];
     
 //    HomeModel *homeModel = [[HomeModel alloc] init];
 //    [homeModel uploadlocation];

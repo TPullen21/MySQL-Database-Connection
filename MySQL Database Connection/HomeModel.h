@@ -14,11 +14,14 @@
 
 @end
 
-@interface HomeModel : NSObject <NSURLConnectionDataDelegate>
+@interface HomeModel : NSObject <NSURLConnectionDataDelegate>{
+    NSMutableData* _receivedData;
+}
 
 @property (nonatomic, weak) id<HomeModelProtocol> delegate;
 
 - (void)downloadItems;
 - (void)uploadlocation;
++ (void)uploadLocationUsingJSON;
 
 @end

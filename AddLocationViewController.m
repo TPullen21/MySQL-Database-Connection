@@ -2,13 +2,12 @@
 //  AddLocationViewController.m
 //  MySQL Database Connection
 //
-//  Created by Tom Pullen on 04/08/2015.
-//  Copyright (c) 2015 Tom Pullen. All rights reserved.
+//  Created by Tom Pullen on 08/08/2015.
+//  Copyright © 2015 Tom Pullen. All rights reserved.
 //
 
 #import "AddLocationViewController.h"
-#import "ViewController.h"
-#import "HomeModel.h"
+#import "AddLocationModel.h"
 
 @interface AddLocationViewController ()
 
@@ -19,8 +18,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    [self.nameTextField becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,7 +33,7 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
+ */
 
 - (IBAction)cancelBarButtonItemPressed:(UIBarButtonItem *)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -45,19 +42,14 @@
 - (IBAction)saveBarButtonItemPressed:(UIBarButtonItem *)sender {
     NSLog(@"Save button pressed!!");
     
-    [HomeModel uploadLocationUsingJSON];
+    [AddLocationModel uploadLocationUsingJSON];
     
-//    [self addLocation:self.nameTextField.text withAddress:self.addressTextField.text latitude:self.latitudeTextField.text longitude:self.longitudeTextField.text];
+    [self didAddLocation];
     
-//    HomeModel *homeModel = [[HomeModel alloc] init];
-//    [homeModel uploadlocation];
-
-    if ([self.presentingViewController isKindOfClass:[ViewController class]]) {
-        NSLog(@"ViewController Class");
-    }
-    else if ([self.presentingViewController isKindOfClass:[AddLocationViewController class]]) {
-        NSLog(@"ViewController Class");
-    }
+    //    [self addLocation:self.nameTextField.text withAddress:self.addressTextField.text latitude:self.latitudeTextField.text longitude:self.longitudeTextField.text];
+    
+    //    HomeModel *homeModel = [[HomeModel alloc] init];
+    //    [homeModel uploadlocation];
     
     [self dismissViewControllerAnimated:YES completion:Nil];
 }
@@ -80,6 +72,11 @@
         
     }
     
+}
+
+- (void)didAddLocation {
+    
+    [self.delegate didAddLocation];
 }
 
 @end

@@ -9,8 +9,9 @@
 
 #import <UIKit/UIKit.h>
 #import "HomeModel.h"
+#import "AddLocationViewController.h"
 
-@interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, HomeModelProtocol>
+@interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, HomeModelProtocol, AddLocationViewControllerDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *listTableView;
 - (IBAction)addBarButtonItemPressed:(UIBarButtonItem *)sender;

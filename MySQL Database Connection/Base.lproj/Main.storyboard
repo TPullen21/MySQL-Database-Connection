@@ -90,21 +90,21 @@
                     <navigationItem key="navigationItem" id="Pr3-Ic-gdx">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="w5k-sP-VYq">
                             <connections>
-                                <action selector="cancelBarButtonItemPressed:" destination="Afj-YY-idJ" id="Mv8-SA-x00"/>
+                                <action selector="cancelBarButtonItemPressed:" destination="Afj-YY-idJ" id="q1x-UU-McP"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="Un2-4W-71L">
                             <connections>
-                                <action selector="saveBarButtonItemPressed:" destination="Afj-YY-idJ" id="p8q-vs-Kvj"/>
+                                <action selector="saveBarButtonItemPressed:" destination="Afj-YY-idJ" id="d8Q-3J-Ir4"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="addressTextField" destination="B9F-Gy-mVJ" id="wch-T8-fya"/>
-                        <outlet property="latitudeTextField" destination="k4A-rw-dXy" id="qJk-TT-E0z"/>
-                        <outlet property="longitudeTextField" destination="eb7-ne-vJv" id="KOw-m3-J6d"/>
-                        <outlet property="nameTextField" destination="Ph7-CR-T7a" id="7Ng-KY-nK0"/>
+                        <outlet property="addressTextField" destination="B9F-Gy-mVJ" id="jtQ-Gr-r1A"/>
+                        <outlet property="latitudeTextField" destination="k4A-rw-dXy" id="zTa-QT-QMq"/>
+                        <outlet property="longitudeTextField" destination="eb7-ne-vJv" id="Tmi-dc-ACi"/>
+                        <outlet property="nameTextField" destination="Ph7-CR-T7a" id="DhV-zq-GAP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qG0-cu-geq" userLabel="First Responder" sceneMemberID="firstResponder"/>

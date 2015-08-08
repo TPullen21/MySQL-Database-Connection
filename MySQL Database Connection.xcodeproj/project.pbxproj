@@ -14,9 +14,10 @@
 		DD16B0FD1B68034D00D24DC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD16B0FC1B68034D00D24DC5 /* Assets.xcassets */; };
 		DD16B1091B6804F800D24DC5 /* HomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DD16B1081B6804F800D24DC5 /* HomeModel.m */; };
 		DD16B10C1B68050700D24DC5 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = DD16B10B1B68050700D24DC5 /* Location.m */; };
-		DDB0685D1B7139C200B2772D /* AddLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB0685C1B7139C200B2772D /* AddLocationViewController.m */; };
 		DDC1B5021B695323004B9A29 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC1B5011B695323004B9A29 /* DetailViewController.m */; };
 		DDC1B5041B69539F004B9A29 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDC1B5031B69539F004B9A29 /* MapKit.framework */; };
+		DDD4DF651B76165A0064937E /* AddLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD4DF641B76165A0064937E /* AddLocationViewController.m */; };
+		DDD4DF6B1B761DAE0064937E /* AddLocationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD4DF6A1B761DAE0064937E /* AddLocationModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,11 +34,13 @@
 		DD16B1081B6804F800D24DC5 /* HomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeModel.m; sourceTree = "<group>"; };
 		DD16B10A1B68050700D24DC5 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
 		DD16B10B1B68050700D24DC5 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
-		DDB0685B1B7139C200B2772D /* AddLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddLocationViewController.h; sourceTree = "<group>"; };
-		DDB0685C1B7139C200B2772D /* AddLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddLocationViewController.m; sourceTree = "<group>"; };
 		DDC1B5001B695323004B9A29 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		DDC1B5011B695323004B9A29 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		DDC1B5031B69539F004B9A29 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		DDD4DF631B76165A0064937E /* AddLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddLocationViewController.h; path = ../AddLocationViewController.h; sourceTree = "<group>"; };
+		DDD4DF641B76165A0064937E /* AddLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddLocationViewController.m; path = ../AddLocationViewController.m; sourceTree = "<group>"; };
+		DDD4DF691B761DAE0064937E /* AddLocationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddLocationModel.h; path = ../AddLocationModel.h; sourceTree = "<group>"; };
+		DDD4DF6A1B761DAE0064937E /* AddLocationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddLocationModel.m; path = ../AddLocationModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,13 +75,15 @@
 		DD16B0EF1B68034D00D24DC5 /* MySQL Database Connection */ = {
 			isa = PBXGroup;
 			children = (
+				DDD4DF691B761DAE0064937E /* AddLocationModel.h */,
+				DDD4DF6A1B761DAE0064937E /* AddLocationModel.m */,
+				DDD4DF631B76165A0064937E /* AddLocationViewController.h */,
+				DDD4DF641B76165A0064937E /* AddLocationViewController.m */,
 				DD16B0F31B68034D00D24DC5 /* AppDelegate.h */,
 				DD16B0F41B68034D00D24DC5 /* AppDelegate.m */,
 				DD16B0F61B68034D00D24DC5 /* ViewController.h */,
 				DD16B0F71B68034D00D24DC5 /* ViewController.m */,
 				DD16B0F91B68034D00D24DC5 /* Main.storyboard */,
-				DDB0685B1B7139C200B2772D /* AddLocationViewController.h */,
-				DDB0685C1B7139C200B2772D /* AddLocationViewController.m */,
 				DDC1B5001B695323004B9A29 /* DetailViewController.h */,
 				DDC1B5011B695323004B9A29 /* DetailViewController.m */,
 				DD16B1071B6804F800D24DC5 /* HomeModel.h */,
@@ -170,13 +175,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDD4DF6B1B761DAE0064937E /* AddLocationModel.m in Sources */,
 				DD16B1091B6804F800D24DC5 /* HomeModel.m in Sources */,
-				DDB0685D1B7139C200B2772D /* AddLocationViewController.m in Sources */,
 				DD16B10C1B68050700D24DC5 /* Location.m in Sources */,
 				DD16B0F81B68034D00D24DC5 /* ViewController.m in Sources */,
 				DD16B0F51B68034D00D24DC5 /* AppDelegate.m in Sources */,
 				DD16B0F21B68034D00D24DC5 /* main.m in Sources */,
 				DDC1B5021B695323004B9A29 /* DetailViewController.m in Sources */,
+				DDD4DF651B76165A0064937E /* AddLocationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

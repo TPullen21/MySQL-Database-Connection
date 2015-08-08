@@ -9,7 +9,6 @@
 #import "ViewController.h"
 #import "Location.h"
 #import "DetailViewController.h"
-#import "AddLocationViewController.h"
 
 @interface ViewController ()
 {
@@ -61,14 +60,12 @@
 
 #pragma mark Table View Delegate Methods
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of feed items (initially 0)
     return _feedItems.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     // Retrieve cell
     NSString *cellIdentifier = @"BasicCell";
     UITableViewCell *myCell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
@@ -82,8 +79,7 @@
     return myCell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     // Set selected location to var
     _selectedLocation = _feedItems[indexPath.row];
     
@@ -93,8 +89,7 @@
 
 #pragma mark Segue
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.destinationViewController isKindOfClass:[DetailViewController class]]) {
         // Get reference to the destination view controller
         DetailViewController *detailVC = segue.destinationViewController;
@@ -103,15 +98,26 @@
         // detail view controller loads, it can access that property to get the feeditem obj
         detailVC.selectedLocation = _selectedLocation;
     }
+    else if ([segue.destinationViewController isKindOfClass:[AddLocationViewController class]]) {
+        AddLocationViewController *addLocationVC = segue.destinationViewController;
+        
+        addLocationVC.delegate = self;
+    }
 }
 
 - (IBAction)addBarButtonItemPressed:(UIBarButtonItem *)sender {
     NSLog(@"Add button pressed!!");
+    
+    [self performSegueWithIdentifier:@"presentAddLocationViewController" sender:sender];
 }
 
 - (void)downloadDataandReloadTable {
     [_homeModel downloadItems];
     [self.listTableView reloadData];
     
+}
+
+- (void)didAddLocation {
+    [self downloadDataandReloadTable];
 }
 @end

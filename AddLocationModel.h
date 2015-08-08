@@ -13,6 +13,6 @@
 }
 
 + (void)uploadlocation;
-+ (void)uploadLocationUsingJSON;
++ (void)uploadLocationUsingJSON:(NSDictionary *)dictionary;
 
 @end

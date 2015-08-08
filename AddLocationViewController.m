@@ -42,7 +42,13 @@
 - (IBAction)saveBarButtonItemPressed:(UIBarButtonItem *)sender {
     NSLog(@"Save button pressed!!");
     
-    [AddLocationModel uploadLocationUsingJSON];
+    NSDictionary* jsonDictionary = @{ kName : self.nameTextField.text,
+                                      kAddress : self.addressTextField.text,
+                                      kLatitude : self.latitudeTextField.text,
+                                      kLongitude : self.longitudeTextField.text
+                                    };
+    
+    [AddLocationModel uploadLocationUsingJSON:jsonDictionary];
     
     [self didAddLocation];
     

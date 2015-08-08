@@ -25,7 +25,7 @@
     }
 }
 
-+ (void)uploadLocationUsingJSON {
++ (void)uploadLocationUsingJSON:(NSDictionary *)dictionary; {
     NSString *queryString = @"http://itsuite.it.brighton.ac.uk/torp10/MySQLDemo/postjson.php";
     
     NSMutableURLRequest *theRequest=[NSMutableURLRequest
@@ -34,11 +34,11 @@
                                      cachePolicy:NSURLRequestUseProtocolCachePolicy
                                      timeoutInterval:60.0];
     
-    NSDictionary* jsonDictionary = @{ @"Name" : @"Qwerty", @"Address" : @"Asdfgh", @"Latitude" : @"37.78", @"Longitude" : @"-122.40" } ;
+//    NSDictionary* jsonDictionary = @{ @"Name" : @"Qwerty", @"Address" : @"Asdfgh", @"Latitude" : @"37.78", @"Longitude" : @"-122.40" } ;
     
     NSError *error;
     
-    NSData* jsonData = [NSJSONSerialization dataWithJSONObject:jsonDictionary
+    NSData* jsonData = [NSJSONSerialization dataWithJSONObject:dictionary
                                                        options:NSJSONWritingPrettyPrinted error:&error];
     
     [theRequest setHTTPMethod:@"POST"];
@@ -48,18 +48,20 @@
     // should check for and handle errors here but we aren't
     [theRequest setHTTPBody:jsonData];
     
-    [NSURLConnection sendAsynchronousRequest:theRequest queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
-        if (error) {
-            NSLog(@"%@", error);
-            //do something with error
-        } else {
-            NSString *responseText = [[NSString alloc] initWithData:data encoding: NSASCIIStringEncoding];
-            NSLog(@"Response: %@", responseText);
-            
-            NSString *newLineStr = @"\n";
-            responseText = [responseText stringByReplacingOccurrencesOfString:@"<br />" withString:newLineStr];
-        }
-    }];
+    [NSURLConnection sendSynchronousRequest:theRequest returningResponse:nil error:nil];
+    
+//    [NSURLConnection sendAsynchronousRequest:theRequest queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+//        if (error) {
+//            NSLog(@"%@", error);
+//            //do something with error
+//        } else {
+//            NSString *responseText = [[NSString alloc] initWithData:data encoding: NSASCIIStringEncoding];
+//            NSLog(@"Response: %@", responseText);
+//            
+//            NSString *newLineStr = @"\n";
+//            responseText = [responseText stringByReplacingOccurrencesOfString:@"<br />" withString:newLineStr];
+//        }
+//    }];
     //
     //    NSMutableURLRequest *request =
     //    [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://itsuite.it.brighton.ac.uk/torp10/MySQLDemo/postjson.php"]];

@@ -16,7 +16,7 @@
 
 @protocol AddLocationViewControllerDelegate <NSObject>
 
-- (void)didAddLocation;
+- (void)addLocation:(NSString *)name Address:(NSString *)address latitude:(NSString *)latitude longitude:(NSString *)longitude;
 
 @end
 

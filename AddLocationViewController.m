@@ -80,9 +80,9 @@
     
 }
 
-- (void)didAddLocation {
+- (void)didAddLocation; {
     
-    [self.delegate didAddLocation];
+    [self.delegate addLocation:self.nameTextField.text Address:self.addressTextField.text latitude:self.latitudeTextField.text longitude:self.longitudeTextField.text];
 }
 
 @end

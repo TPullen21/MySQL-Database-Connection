@@ -14,6 +14,8 @@
 		DD16B0FD1B68034D00D24DC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD16B0FC1B68034D00D24DC5 /* Assets.xcassets */; };
 		DD16B1091B6804F800D24DC5 /* HomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DD16B1081B6804F800D24DC5 /* HomeModel.m */; };
 		DD16B10C1B68050700D24DC5 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = DD16B10B1B68050700D24DC5 /* Location.m */; };
+		DD94922C1B777555001ED000 /* locationpin120.png in Resources */ = {isa = PBXBuildFile; fileRef = DD94922B1B777555001ED000 /* locationpin120.png */; };
+		DD94922F1B777599001ED000 /* DeleteLocationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DD94922E1B777599001ED000 /* DeleteLocationModel.m */; };
 		DDC1B5021B695323004B9A29 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC1B5011B695323004B9A29 /* DetailViewController.m */; };
 		DDC1B5041B69539F004B9A29 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDC1B5031B69539F004B9A29 /* MapKit.framework */; };
 		DDD4DF651B76165A0064937E /* AddLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD4DF641B76165A0064937E /* AddLocationViewController.m */; };
@@ -34,6 +36,9 @@
 		DD16B1081B6804F800D24DC5 /* HomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeModel.m; sourceTree = "<group>"; };
 		DD16B10A1B68050700D24DC5 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
 		DD16B10B1B68050700D24DC5 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		DD94922B1B777555001ED000 /* locationpin120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = locationpin120.png; sourceTree = "<group>"; };
+		DD94922D1B777599001ED000 /* DeleteLocationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeleteLocationModel.h; sourceTree = "<group>"; };
+		DD94922E1B777599001ED000 /* DeleteLocationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeleteLocationModel.m; sourceTree = "<group>"; };
 		DDC1B5001B695323004B9A29 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		DDC1B5011B695323004B9A29 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		DDC1B5031B69539F004B9A29 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -77,6 +82,8 @@
 			children = (
 				DDD4DF691B761DAE0064937E /* AddLocationModel.h */,
 				DDD4DF6A1B761DAE0064937E /* AddLocationModel.m */,
+				DD94922D1B777599001ED000 /* DeleteLocationModel.h */,
+				DD94922E1B777599001ED000 /* DeleteLocationModel.m */,
 				DDD4DF631B76165A0064937E /* AddLocationViewController.h */,
 				DDD4DF641B76165A0064937E /* AddLocationViewController.m */,
 				DD16B0F31B68034D00D24DC5 /* AppDelegate.h */,
@@ -100,6 +107,7 @@
 		DD16B0F01B68034D00D24DC5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DD94922B1B777555001ED000 /* locationpin120.png */,
 				DD16B0F11B68034D00D24DC5 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -165,6 +173,7 @@
 			files = (
 				DD16B0FD1B68034D00D24DC5 /* Assets.xcassets in Resources */,
 				DD16B0FB1B68034D00D24DC5 /* Main.storyboard in Resources */,
+				DD94922C1B777555001ED000 /* locationpin120.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,6 +191,7 @@
 				DD16B0F51B68034D00D24DC5 /* AppDelegate.m in Sources */,
 				DD16B0F21B68034D00D24DC5 /* main.m in Sources */,
 				DDC1B5021B695323004B9A29 /* DetailViewController.m in Sources */,
+				DD94922F1B777599001ED000 /* DeleteLocationModel.m in Sources */,
 				DDD4DF651B76165A0064937E /* AddLocationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

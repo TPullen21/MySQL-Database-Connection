@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#define kAddLocationURL @"http://itsuite.it.brighton.ac.uk/torp10/MySQLDemo/postjson.php"
+
 @interface AddLocationModel : NSObject <NSURLConnectionDataDelegate>{
     NSMutableData* _receivedData;
 }

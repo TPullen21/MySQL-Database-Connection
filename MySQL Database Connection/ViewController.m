@@ -9,19 +9,19 @@
 #import "ViewController.h"
 #import "Location.h"
 #import "DetailViewController.h"
+#import "DeleteLocationModel.h"
 
 @interface ViewController ()
 {
     HomeModel *_homeModel;
-    NSArray *_feedItems;
+    NSMutableArray *_feedItems;
     Location *_selectedLocation;
 }
 @end
 
 @implementation ViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     
     // Set this view controller object as the delegate and data source for the table view
@@ -29,7 +29,7 @@
     self.listTableView.dataSource = self;
     
     // Create array object and assign it to _feedItems variable
-    _feedItems = [[NSArray alloc] init];
+    _feedItems = [[NSMutableArray alloc] init];
     
     // Create new HomeModel object and assign it to _homeModel variable
     _homeModel = [[HomeModel alloc] init];
@@ -41,18 +41,16 @@
     [_homeModel downloadItems];
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
--(void)itemsDownloaded:(NSArray *)items
-{
+- (void)itemsDownloaded:(NSArray *)items {
     // This delegate method will get called when the items are finished downloading
     
     // Set the downloaded items to the array
-    _feedItems = items;
+    _feedItems = [items mutableCopy];
     
     // Reload the table view
     [self.listTableView reloadData];
@@ -87,6 +85,30 @@
     [self performSegueWithIdentifier:@"detailSegue" sender:self];
 }
 
+- (BOOL)tableView:(nonnull UITableView *)tableView canEditRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    return YES;
+}
+
+- (void)tableView:(nonnull UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        NSLog(@"Deleting");
+        
+        Location *locationToDelete = _feedItems[indexPath.row];
+        
+        NSDictionary* dictionary = @{ kName : locationToDelete.name,
+                                      kAddress : locationToDelete.address,
+                                      kLatitude : locationToDelete.latitude,
+                                      kLongitude : locationToDelete.longitude
+                                      };
+        
+        [DeleteLocationModel deleteLocationUsingJSON:dictionary];
+        
+        [_feedItems removeObjectAtIndex:indexPath.row];
+        
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
+}
+
 #pragma mark Segue
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -111,13 +133,16 @@
     [self performSegueWithIdentifier:@"presentAddLocationViewController" sender:sender];
 }
 
-- (void)downloadDataandReloadTable {
-    [_homeModel downloadItems];
-    [self.listTableView reloadData];
+- (void)addLocation:(NSString *)name Address:(NSString *)address latitude:(NSString *)latitude longitude:(NSString *)longitude; {
     
-}
-
-- (void)didAddLocation {
-    [self downloadDataandReloadTable];
+    Location *newLocation = [[Location alloc] init];
+    newLocation.name = name;
+    newLocation.address = address;
+    newLocation.latitude = latitude;
+    newLocation.longitude = longitude;
+    
+    [_feedItems addObject:newLocation];
+    
+    [self.listTableView reloadData];
 }
 @end
